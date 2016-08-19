@@ -52,30 +52,5 @@ module.exports = {
   //   // tls: ''
   // },
 
-  acl: {
-    disabled: false
-  },
-
-  enableRequestLog: false,
-
-  database: {
-    prod: {
-      dialect: 'mysql',
-      database: 'test',
-      username: 'root',
-      password: ''
-    },
-    dev: {
-      dialect: 'mysql',
-      database: 'test',
-      username: 'root',
-      password: ''
-    },
-    test: {
-      dialect: 'mysql',
-      database: 'test',
-      username: 'root',
-      password: ''
-    }
-  }
+  acl: { disabled: false }
 }
