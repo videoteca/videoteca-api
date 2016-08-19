@@ -3,13 +3,11 @@ const RedisStore = require('connect-redis')(session);
 const redis = require('redis');
 
 // change host and port to your redis cfgs:
-const redisHost = 'localhost';
-const redisPort = 6379;
 
 //CREATE REDIS CLIENT
 const redisClient = redis.createClient({
-  host: redisHost,
-  port: redisPort
+  host: process.env.REDIS_HOST,
+  port: process.env.REDIS_PORT
 });
 
 var configs = {
@@ -41,7 +39,7 @@ var configs = {
 
 if (process.env.REDIS_HOST) {
   configs.session = {
-    secret: 'someSecretText',
+    secret: process.env.REDIS_SECRET || '1312313103310391803',
     store: new RedisStore({
       // pass the session store settings, see the session store docs
       client: redisClient,
